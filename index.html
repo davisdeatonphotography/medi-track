@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>MediTrack</title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-mode">
+<header>
+<nav>
+<h1>MediTrack</h1>
+</nav>
+</header>
+<main>
+<section id="default-section">
+<button class="apple-button" id="switch-to-login">Login</button>
+<button class="apple-button" id="switch-to-signup">Sign Up</button>
+</section>
+<section id="login-section" style="display: none;">
+<form id="login-form">
+<h2>Login</h2>
+<div>
+<label for="login-username">Username:</label>
+<input id="login-username" name="username" required="" type="username"/>
+</div>
+<div>
+<label for="login-password">Password:</label>
+<input id="login-password" name="password" required="" type="password"/>
+</div>
+<button class="apple-button" type="submit">Login</button>
+</form>
+<div id="login-info">
+<p>Don't have an account? <span id="signup-link">Sign up</span></p>
+<p>Forgot password? <span id="forgot-password-link">Reset password</span></p>
+</div>
+</section>
+<section id="signup-section" style="display: none;">
+<form id="signup-form">
+<h2>Sign Up</h2>
+<div>
+<label for="signup-username">Username:</label>
+<input id="signup-username" name="username" required="" type="username"/>
+</div>
+<div>
+<label for="signup-password">Password:</label>
+<input id="signup-password" name="password" required="" type="password"/>
+</div>
+<button class="apple-button" type="submit">Sign Up</button>
+</form>
+<div id="login-info">
+<p>Already have an account? <span id="login-link">Login</span></p>
+</div>
+</section>
+<section id="api-key-section" style="display: none;">
+<form id="api-key-form">
+<h2>Enter OpenAI API Key</h2>
+<div>
+<label for="api-key-input">API Key:</label>
+<input id="api-key-input" required=""/>
+</div>
+<button class="apple-button" type="submit">Submit</button>
+</form>
+</section>
+</main>
+<footer>
+<p>MediTrack © 2023</p>
+</footer>
+<script type="module" src="js/domUtils.js"></script>
+<script type="module" src="js/indexDOM.js"></script>
+</body>
+</html>

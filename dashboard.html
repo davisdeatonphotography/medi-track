@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediTrack Dashboard</title>
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-mode">
+<header>
+  <nav>
+    <h1>MediTrack</h1>
+    <a href="index.html">Home</a>
+    <div id="user-icon"></div>
+  </nav>
+</header>
+
+<main>
+  <section id="personal-info-section">
+    <h2>Personal Information</h2>
+    <form id="personal-info-form">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="feet">Height (feet):</label>
+        <input type="number" id="feet" name="feet" required>
+      </div>
+      <div>
+        <label for="inches">Height (inches):</label>
+        <input type="number" id="inches" name="inches" required>
+      </div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <label for="weight">Weight (lbs):</label>
+      <input type="number" id="weight" name="weight" required>
+      <button type="submit">Update Information</button>
+    </form>
+  </section>
+  
+  <section id="profile-section">
+    <h2>Profile</h2>
+    <form id="profile-form">
+      <div>
+        <label for="profile-name">Name:</label>
+        <input type="text" id="profile-name" name="name" required>
+      </div>
+      <div>
+        <label for="profile-feet">Height (feet):</label>
+        <select id="profile-feet" name="feet" required>
+          <option value="">Select Height (feet)</option>
+          <option value="3">3 feet</option>
+          <option value="4">4 feet</option>
+          <option value="5">5 feet</option>
+          <option value="6">6 feet</option>
+        </select>
+      </div>
+      <div>
+        <label for="profile-inches">Height (inches):</label>
+        <select id="profile-inches" name="inches" required>
+          <option value="">Select Height (inches)</option>
+          <option value="0">0 inches</option>
+          <option value="1">1 inch</option>
+          <option value="2">2 inches</option>
+          <option value="3">3 inches</option>
+          <option value="4">4 inches</option>
+          <option value="5">5 inches</option>
+          <option value="6">6 inches</option>
+          <option value="7">7 inches</option>
+          <option value="8">8 inches</option>
+          <option value="9">9 inches</option>
+          <option value="10">10 inches</option>
+          <option value="11">11 inches</option>
+        </select>
+      </div>
+      <div>
+        <label for="profile-age">Age:</label>
+        <input type="number" id="profile-age" name="age" required>
+      </div>
+      <div>
+        <label for="profile-gender">Gender:</label>
+        <select id="profile-gender" name="gender" required>
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="profile-weight">Weight (lbs):</label>
+        <select id="profile-weight" name="weight" required>
+          <option value="">Select Weight (lbs)</option>
+          <option value="100">100 lbs</option>
+          <option value="110">110 lbs</option>
+          <option value="120">120 lbs</option>
+          <option value="130">130 lbs</option>
+          <option value="140">140 lbs</option>
+          <option value="150">150 lbs</option>
+          <option value="160">160 lbs</option>
+          <option value="170">170 lbs</option>
+          <option value="180">180 lbs</option>
+          <option value="190">190 lbs</option>
+          <option value="200">200 lbs</option>
+          <option value="210">210 lbs</option>
+          <option value="220">220 lbs</option>
+          <option value="230">230 lbs</option>
+          <option value="240">240 lbs</option>
+          <option value="250">250 lbs</option>
+        </select>
+      </div>
+      <button type="submit">Update Profile</button>
+    </form>
+  </section>
+  
+  <section id="medication-section">
+    <h2>Add Medication</h2>
+    <form id="medication-form">
+      <div>
+        <label for="medication-name">Medication Name:</label>
+        <input id="medication-name" required>
+      </div>
+
+      <div>
+        <label for="dosage">Dosage:</label>
+        <input id="dosage" type="number" required>
+      </div>
+
+      <div>
+        <label for="frequency">Frequency:</label>
+        <select id="frequency" required>
+          <option value="" disabled selected>Select Frequency</option>
+          <option value="1">Once daily</option>
+          <option value="2">Twice daily</option>
+          <option value="3">Three times daily</option>
+          <option value="4">Four times daily</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="timeOfIntake0">Time of Intake:</label>
+        <input type="time" id="timeOfIntake0" name="timeOfIntake">
+      </div>
+
+      <button type="submit" class="apple-button">Add Medication</button>
+    </form>
+  </section>
+
+  <section id="medication-info-section">
+    <h2>Medication Information</h2>
+    <div id="medication-info-container">
+      <div id="medication-info-tabs">
+        <button class="info-tab active" id="tab-drugName">Drug Name</button>
+        <button class="info-tab" id="tab-dosageInstructions">Dosage Instructions</button>
+        <button class="info-tab" id="tab-sideEffects">Side Effects</button>
+        <button class="info-tab" id="tab-drugInteractions">Drug Interactions</button>
+        <button class="info-tab" id="tab-precautions">Precautions</button>
+      </div>
+
+      <div id="medication-info-content">
+        <div class="info-panel active" id="panel-drugName"></div>
+        <div class="info-panel" id="panel-dosageInstructions"></div>
+        <div class="info-panel" id="panel-sideEffects"></div>
+        <div class="info-panel" id="panel-drugInteractions"></div>
+        <div class="info-panel" id="panel-precautions"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="health-data-upload-section">
+    <h2>Health Data Upload</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <button type="submit">Upload</button>
+    </form>    
+  </section>
+
+  <section id="correlation-analysis-section">
+    <h2>Correlation Analysis</h2>
+  </section>
+
+  <section id="visualization-section">
+    <h2>Visualization and Reporting</h2>
+  </section>
+</main>
+
+<footer>
+  <p>MediTrack © 2023. All rights reserved.</p>
+</footer>
+
+<script type="module" src="js/domUtils.js"></script>
+<script type="module" src="js/dashboardDOM.js"></script>
+</body>
+</html>
